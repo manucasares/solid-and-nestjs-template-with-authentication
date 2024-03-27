@@ -22,3 +22,17 @@ jobs:
 
       - name: Run Prettier
         run: npm run front-prettify
+
+      - name: Check if changes are present
+        id: git-check
+        run: |
+          git diff --exit-code || echo "Changes detected"
+
+      - name: Commit changes
+        if: steps.git-check.outputs.result == 'Changes detected'
+        run: |
+          git config --global user.name "$(git log -1 --pretty=format:'%an')"
+          git config --global user.email "$(git log -1 --pretty=format:'%ae')"
+          git add .
+          git commit -m "Auto-format code with Prettier"
+          git push
