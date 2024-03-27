@@ -1,0 +1,17 @@
+{
+  "name": "joditas-rating",
+  "version": "1.0.0",
+  "description": "App para encontrar y calificar las fiestas/boliches de Buenos Aires, Argentina.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back-prettify": ".\\back\\vendor\\bin\\pint",
+    "front-prettify": "npx prettier --write \"front/**/*.+(js|ts|json|css|scss|html)\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.2.5"
+  }
+}
