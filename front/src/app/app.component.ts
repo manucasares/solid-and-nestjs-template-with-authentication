@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-                              title = '¿A dónde salgo?';
+  title = '¿A dónde salgo?';
 
   constructor(private titleService: Title) {
     this.titleService.setTitle($localize`${this.title}`);
