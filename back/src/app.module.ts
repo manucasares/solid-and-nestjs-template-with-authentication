@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostsModule } from './resources/posts/posts.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { EnvSchema } from './types/environment';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validate: (config: Record<string, any>) => EnvSchema.parse(config),
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
