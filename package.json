@@ -1,5 +1,5 @@
 {
-  "name": "joditas-rating",
+  "name": "solidjs-nestjs-template",
   "version": "1.0.0",
   "description": "App para encontrar y calificar las fiestas/boliches de Buenos Aires, Argentina.",
   "main": "index.js",
